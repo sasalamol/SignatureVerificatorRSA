@@ -1,3 +1,6 @@
+#RSA248 ISO/IEC 9796 Signature Verificator
+#Author: Semih Aslan SAGLAMOL 
+#sasalamol
 from Crypto.PublicKey import RSA
 import pem
 import time
