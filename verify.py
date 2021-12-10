@@ -1,6 +1,7 @@
 #RSA248 ISO/IEC 9796 Signature Verificator
 #Author: Semih Aslan SAGLAMOL 
 #sasalamol
+
 from Crypto.PublicKey import RSA
 import pem
 import time
@@ -18,19 +19,13 @@ print(pub)
 print("modulus:", pub.n)
 print("encryption key:", pub.e)
 sub = pub.n - sign
-
-sys.stdout.write ('Just a sec!\nVerification in progress') ; sleep(1)
-sys.stdout.write ('.') ; sleep(1.5)
-sys.stdout.write ('.') ; sleep(1.5)
-sys.stdout.write ('.') ; sleep(0.1)
-...
-sys.stdout.write ('\n')
-
+sys.stdout.write ('Just a sec!\nVerification in progress') ;
 data1 = pow(sign,pub.e) % pub.n
 result = hex(data1)
 print("sigend hash" , result[447:])
 print("original hash" , sha)
-if result[447:] == sha :
- print("SIGNATURE VERIFIED")
-else :
- print("NOT VERIFIED")
+
+ if result[447:] == sha :
+  print("SIGNATURE VERIFIED")
+  else :
+   print("NOT VERIFIED")
